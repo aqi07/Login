@@ -12,16 +12,18 @@ const layout = {
   };
   
 
-  const Test = () => {
+  const Test = (props) => {
     const onFinish = values => {
       console.log('Success:', values);
+      props.dispatch({
+        type: "checklist/updateStatus",
+        data: values}
+      )
     };
     const onFinishFailed = errorInfo => {
       console.log('Failed:', errorInfo);
     };
-    const clickSubmit = (event) => { 
-      console.log("bug")
-      }
+    
     return (
       <Form
         {...layout}
@@ -48,7 +50,7 @@ const layout = {
           <Checkbox>Remember me</Checkbox>
         </Form.Item>
         <Form.Item {...tailLayout}>
-          <Button onClick={clickSubmit} type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit">
             Submit
           </Button>
         </Form.Item>

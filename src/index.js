@@ -21,6 +21,7 @@ products: [
 // app.model(require('./models/example').default);
 app.model(require('./models/products').default);
 app.model(require('./models/product').default);
+app.model(require('./models/checklist').default);
 // 4. Router
 app.router(require('./router').default);
 

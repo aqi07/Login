@@ -8,14 +8,17 @@ import {connect} from "dva"
             return(
                 <div>
                     <Test dispatch={dispatch} title="商品类型" productList={productList} />
+                    {this.props.msg}
                 </div>
             ) 
         }
     }
 
     const mapStateToProps = (state) =>{
+        console.log(state.checklist.Msg)
         return{
-            productList:state.product
+            productList:state.product,
+            msg:state.checklist.Msg
         }
     }
 
