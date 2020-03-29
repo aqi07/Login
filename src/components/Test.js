@@ -15,7 +15,7 @@ const Test = (props) => {
     console.log('Success:', values)
     props.dispatch({
       type: 'checklist/testLogin',
-      data: values
+      payload: values
     }
     )
   }

@@ -23,14 +23,14 @@ export default {
     setLogin(state,payload){
       const _state = deepClone(state)
       _state.Namelist=payload.data
-      console.log(_state.Namelist)
-      // let isOk = false
-      // _state.Namelist.forEach(v => {
-      //   if (v.userId === payload.data.username && v.password === payload.data.password) {
-      //     isOk = true
-      //   }
-      // })
-      // _state.Msg = isOk ? 'Success!' : 'Fail!'
+      console.log(_state)
+      let isOk = false
+      _state.Namelist.api.forEach(v => {
+        if (v.userId === _state.Namelist.form.username && v.password === _state.Namelist.form.password) {
+          isOk = true
+        }
+      })
+      _state.Msg = isOk ? 'Success!' : 'Fail!'
 
       return _state
       console.log(_state)
