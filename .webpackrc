@@ -1,4 +1,23 @@
 {
+
+  "proxy": {
+    "/apis/": {
+      "target": "https://cnodejs.org",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/apis": ""
+      }
+    },
+    "/apis2/": {
+      "target": "https://www.ptelearning.cn:8092",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/apis2": ""
+      }
+    }
+  },
+
+
   "extraBabelPlugins": [
     ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
   ]

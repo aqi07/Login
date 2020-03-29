@@ -1,5 +1,6 @@
 import React from 'react'
 import { Divider, Input, Button, Form, Checkbox } from 'antd'
+import  * as apis from "../services/example"
 
 const layout = {
   labelCol: { span: 8 },
@@ -13,7 +14,7 @@ const Test = (props) => {
   const onFinish = values => {
     console.log('Success:', values)
     props.dispatch({
-      type: 'checklist/updateStatus',
+      type: 'checklist/testLogin',
       data: values
     }
     )
@@ -22,7 +23,21 @@ const Test = (props) => {
     console.log('Failed:', errorInfo)
   }
 
+  const handleSetup =() => {
+    props.dispatch({
+      type: 'checklist/updateStatusAsync',
+    })
+  } 
+
+  // const testLogin=()=>{
+  //   props.dispatch({
+  //     type:"checklist/testLogin"
+  //   })
+
+  // }
+
   return (
+    <div>
     <Form
       {...layout}
       name='basic'
@@ -53,6 +68,10 @@ const Test = (props) => {
         </Button>
       </Form.Item>
     </Form>
+        {/* <Button onClick={testLogin} type='primary' htmlType='submit'>
+            Asyncfunction
+        </Button> */}
+    </div>
   )
 }
 
