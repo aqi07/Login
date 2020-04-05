@@ -22,6 +22,7 @@ const app = dva({
 app.model(require('./models/products').default)
 app.model(require('./models/product').default)
 app.model(require('./models/checklist').default)
+app.model(require('./models/element').default)
 // 4. Router
 app.router(require('./router').default)
 

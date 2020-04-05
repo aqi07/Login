@@ -25,6 +25,7 @@ export default {
       _state.Namelist=payload.data
       console.log(_state)
       let isOk = false
+
       _state.Namelist.api.forEach(v => {
         if (v.userId === _state.Namelist.form.username && v.password === _state.Namelist.form.password) {
           isOk = true
